@@ -1,4 +1,3 @@
-```text
 # 🚀 Factory Tracking System
 
 A microservices-based application for real-time factory production monitoring, built using Spring Boot WebFlux and React.
@@ -96,30 +95,32 @@ npm start
 
 ### Production Service
 
-- GET /production/full  
-- POST /production  
-- PUT /production/{id}  
-- DELETE /production/{id}  
+GET /production/full → Get all production data  
+POST /production → Add production  
+PUT /production/{id} → Update production  
+DELETE /production/{id} → Delete production  
+
+---
 
 ### Machine Service
 
-- GET /machine  
-- POST /machine  
+GET /machine → Get machines  
+POST /machine → Add machine  
 
 ---
 
 ## 📈 Future Enhancements
 
 - JWT Authentication  
-- API Gateway  
-- Advanced analytics  
+- API Gateway (Spring Cloud Gateway)  
+- Advanced analytics (date-wise reports)  
 - Docker deployment  
 
 ---
 
 ## 🧠 Learnings
 
-- Built microservices architecture  
-- Used Spring WebFlux for reactive programming  
-- Optimized UI performance using memoization  
-- Implemented real-time data visualization  
+- Built a microservices architecture from scratch  
+- Implemented reactive programming using WebFlux  
+- Improved UI performance using memoization techniques  
+- Designed data visualization dashboards  
