@@ -76,12 +76,13 @@ factory-tracking-system/
 
 ### 1. Start Backend Services
 
+```text
 cd production-service  
 mvn spring-boot:run  
 
 cd machine-service  
 mvn spring-boot:run  
-
+```
 ---
 
 ### 2. Start Frontend
