@@ -14,7 +14,7 @@ A microservices-based application for real-time factory production monitoring, b
 - Table view with inline editing  
 
 ---
-
+```text
 ## 🏗️ Architecture
 
 Frontend (React)
@@ -24,7 +24,7 @@ Production Service (Spring Boot WebFlux)
 Machine Service (Spring Boot)
       ↓
 MySQL Database
-
+```
 ---
 
 ## 🛠️ Tech Stack
@@ -64,11 +64,12 @@ MySQL Database
 
 ## 📂 Project Structure
 
+```text
 factory-tracking-system/
 ├── production-service/
 ├── machine-service/
 ├── factory-ui/
-
+```
 ---
 
 ## ▶️ How to Run
@@ -85,10 +86,11 @@ mvn spring-boot:run
 
 ### 2. Start Frontend
 
+```bash
 cd factory-ui  
 npm install  
 npm start  
-
+```
 ---
 
 ## 🌐 API Endpoints
