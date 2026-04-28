@@ -84,7 +84,7 @@ public class ProductionService {
 	
 	public Mono<MachineDTO> getMachine(Long machineId) {
 	    return webClient.get()
-	            .uri("http://localhost:8082/machine/" + machineId)
+	            .uri("http://localhost:8080/machine/" + machineId)
 	            .retrieve()
 	            .bodyToMono(MachineDTO.class);
 	}
