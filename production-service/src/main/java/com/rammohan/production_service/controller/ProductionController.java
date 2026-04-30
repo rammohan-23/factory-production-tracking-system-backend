@@ -23,7 +23,6 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/production")
-@CrossOrigin(origins = "http://localhost:3000")
 public class ProductionController {
 
 	private final ProductionService service;
