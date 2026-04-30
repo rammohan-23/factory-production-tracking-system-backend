@@ -72,20 +72,28 @@ mvn spring-boot:run
 ```
 
 ### Start Services
+```bash
 cd production-service  
-mvn spring-boot:run  
+mvn spring-boot:run
+```
 
+```bash
 cd machine-service  
-mvn spring-boot:run  
+mvn spring-boot:run
+```
 
 ### Start Gateway
+```bash
 cd api-gateway  
 mvn spring-boot:run  
+```
 
 ### Start Frontend
+```bash
 cd factory-ui  
 npm install  
 npm start  
+```
 
 ---
 
