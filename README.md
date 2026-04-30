@@ -66,10 +66,10 @@ factory-tracking-system/
 ## ▶️ How to Run
 
 ### Start Eureka
-<bash>
+```bash
 cd eureka-server  
-mvn spring-boot:run 
-</bash>
+mvn spring-boot:run
+```
 
 ### Start Services
 cd production-service  
