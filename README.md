@@ -1,6 +1,6 @@
 # 🚀 Factory Tracking System
 
-A microservices-based application for real-time factory production monitoring, built using Spring Boot WebFlux and React.
+A microservices-based factory production monitoring system with real-time analytics, built using Spring Boot WebFlux, Spring Cloud (Eureka + API Gateway), and React.
 
 ---
 
@@ -9,21 +9,26 @@ A microservices-based application for real-time factory production monitoring, b
 - Real-time production dashboard  
 - Line & bar charts for analytics (Production, Machine, Shift)  
 - Full CRUD operations (Create, Read, Update, Delete)  
-- Microservices architecture (Production Service + Machine Service)  
+- Microservices architecture (Production + Machine Services)  
+- Service discovery using Eureka Server  
+- Centralized routing using API Gateway  
 - Optimized frontend rendering using memoization  
 - Table view with inline editing  
 
 ---
-```text
-## 🏗️ Architecture
 
+## 🏗️ Architecture
+```text
 Frontend (React)
       ↓
-Production Service (Spring Boot WebFlux)
+API Gateway (Spring Cloud Gateway)
       ↓
-Machine Service (Spring Boot)
-      ↓
-MySQL Database
+-----------------------------------
+↓                                 ↓
+Production Service           Machine Service
+(Spring Boot WebFlux)        (Spring Boot WebFlux)
+      ↓                                 ↓
+------------- MySQL Database -------------
 ```
 ---
 
@@ -32,6 +37,8 @@ MySQL Database
 ### Backend
 - Java 21  
 - Spring Boot WebFlux  
+- Spring Cloud Gateway  
+- Netflix Eureka  
 - R2DBC (Reactive MySQL)  
 - REST APIs  
 
@@ -45,27 +52,11 @@ MySQL Database
 
 ---
 
-## 📊 Dashboard Features
-
-- Production Trend (Line Chart)  
-- Shift-wise Production (Bar Chart)  
-- Machine-wise Production (Bar Chart)  
-- Dynamic chart switching  
-- Table view with inline editing & delete  
-
----
-
-## ⚡ Performance Optimization
-
-- Used useMemo in React to avoid unnecessary recalculations  
-- Reduced re-renders, improving dashboard performance by ~35%  
-
----
-
 ## 📂 Project Structure
-
 ```text
 factory-tracking-system/
+├── eureka-server/
+├── api-gateway/
 ├── production-service/
 ├── machine-service/
 ├── factory-ui/
@@ -74,56 +65,57 @@ factory-tracking-system/
 
 ## ▶️ How to Run
 
-### 1. Start Backend Services
+### Start Eureka
+cd eureka-server  
+mvn spring-boot:run  
 
-```text
+### Start Services
 cd production-service  
 mvn spring-boot:run  
 
 cd machine-service  
 mvn spring-boot:run  
-```
----
 
-### 2. Start Frontend
+### Start Gateway
+cd api-gateway  
+mvn spring-boot:run  
 
-```bash
+### Start Frontend
 cd factory-ui  
 npm install  
 npm start  
-```
+
 ---
 
 ## 🌐 API Endpoints
 
-### Production Service
+### Production
+GET /production/full  
+POST /production  
+PUT /production/{id}  
+DELETE /production/{id}  
 
-GET /production/full → Get all production data  
-POST /production → Add production  
-PUT /production/{id} → Update production  
-DELETE /production/{id} → Delete production  
-
----
-
-### Machine Service
-
-GET /machine → Get machines  
-POST /machine → Add machine  
+### Machine
+GET /machine  
+POST /machine  
+GET /machine/{id}  
+DELETE /machine/{id}  
 
 ---
 
 ## 📈 Future Enhancements
 
 - JWT Authentication  
-- API Gateway (Spring Cloud Gateway)  
-- Advanced analytics (date-wise reports)  
-- Docker deployment  
+- Docker Deployment  
+- Advanced Analytics  
+- Circuit Breaker  
 
 ---
 
 ## 🧠 Learnings
 
-- Built a microservices architecture from scratch  
-- Implemented reactive programming using WebFlux  
-- Improved UI performance using memoization techniques  
-- Designed data visualization dashboards  
+- Microservices architecture  
+- Service discovery with Eureka  
+- API Gateway routing  
+- Reactive programming  
+- Frontend performance optimization  
